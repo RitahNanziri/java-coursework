@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> returning the maximum of 3 numbers</title>
+</head>
+
+<body>
+
+    <p name="firstnumber"></p>
+    <p name="secondnumber"></p>
+    <p name="thirdnumber"></p>
+    <p name="maximum"></p>
+
+
+</body>
+<script>
+    function findMaximum() {
+        var firstNumber = prompt("Enter the first number:");
+        var secondNumber = prompt("Enter the second number:");
+        var thirdNumber = prompt("Enter the third number:");
+
+        var num1 = parseFloat(firstNumber);
+        var num2 = parseFloat(secondNumber);
+        var num3 = parseFloat(thirdNumber);
+
+        if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+            alert("Please enter valid numeric values.");
+            return;
+        }
+
+        var maximum = Math.max(num1, num2, num3);
+
+        document.getElementsByName("firstnumber")[0].textContent = "first number: " + num1;
+        document.getElementsByName("secondnumber")[0].textContent = "second number: " + num2;
+        document.getElementsByName("thirdnumber")[0].textContent = "third number: " + num3;
+        document.getElementsByName("maximum")[0].textContent = "Maximum is: " + maximum;
+    }
+
+    window.onload = findMaximum;
+</script>
+
+</html>
